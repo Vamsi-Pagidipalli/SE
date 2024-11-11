@@ -13,7 +13,9 @@ def get_computer_choice():
 
 # Function to determine the winner
 def determine_winner(user_choice, computer_choice):
-    if (user_choice == 'rock' and computer_choice == 'scissors') or \
+    if user_choice == computer_choice:
+        return "tie"
+    elif (user_choice == 'rock' and computer_choice == 'scissors') or \
          (user_choice == 'scissors' and computer_choice == 'paper') or \
          (user_choice == 'paper' and computer_choice == 'rock'):
         return "user"
@@ -32,7 +34,9 @@ def play_game():
         print(f"Computer chose: {computer_choice}")
         
         winner = determine_winner(user_choice, computer_choice)
-        if winner == "user":
+        if winner == "tie":
+            print("It's a tie! Rematching...\n")
+        elif winner == "user":
             print("Congratulations! You win!")
             break
         else:
