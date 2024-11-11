@@ -35,7 +35,7 @@ def play_game():
         
         winner = determine_winner(user_choice, computer_choice)
         if winner == "tie":
-            print("It's a tie! Rematching...\n")
+            print("It's a tie! Rematching... Play Again\n")
         elif winner == "user":
             print("Congratulations! You win!")
             break
